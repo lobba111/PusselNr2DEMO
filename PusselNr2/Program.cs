@@ -35,23 +35,23 @@ int depth = 0; // är kommandot down ska värdet utav down plussa på depth, är
 string[] sampleCommando = new string[] { "forward", "down", "forward", "up", "down", "forward" };
 int[] sampleValues = new int[] { 5, 5, 8, 3, 8, 2 };
 int j = 0;
-for (int i = 0; i < sampleCommando.Length; i++)
+for (int i = 0; i < dataCommandon.Length; i++)
 {
     
 
-        if (sampleCommando[i].Contains("forward"))
+        if (dataCommandon[i].Contains("forward"))
         {
-            horizontal += sampleValues[i];
+            horizontal += dataValues[i];
         
         }
-        else if (sampleCommando[i].Contains("down"))
+        else if (dataCommandon[i].Contains("down"))
         {
-            depth += sampleValues[i];
+            depth += dataValues[i];
 
     }
-        else if (sampleCommando[i].Contains("up"))
+        else if (dataCommandon[i].Contains("up"))
         {
-            depth -= sampleValues[i];
+            depth -= dataValues[i];
         
         }
     
