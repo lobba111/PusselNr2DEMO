@@ -3,10 +3,7 @@ using PusselNr2;
 using System.Collections;
 using System.Text.RegularExpressions;
 
-int forward = 0;
-//int depth = 0;
-int up = 0; 
-int down = 0;
+
 string[] inputData = System.IO.File.ReadAllLines(@"C:\Users\robin\OneDrive\Skrivbord\inputdata.txt");
 List<int> filterdDataFromInputValues = new List<int>(); 
 List<string> filterdDataCommandos = new List<string>();
@@ -34,7 +31,7 @@ int depth = 0; // är kommandot down ska värdet utav down plussa på depth, är
 // dags att börja testa lite med sample datan som finns tillgänglig innan jag ger mig på hela data mängden 
 string[] sampleCommando = new string[] { "forward", "down", "forward", "up", "down", "forward" };
 int[] sampleValues = new int[] { 5, 5, 8, 3, 8, 2 };
-int j = 0;
+
 for (int i = 0; i < dataCommandon.Length; i++)
 {
     
@@ -48,7 +45,7 @@ for (int i = 0; i < dataCommandon.Length; i++)
         {
             depth += dataValues[i];
 
-    }
+        }
         else if (dataCommandon[i].Contains("up"))
         {
             depth -= dataValues[i];
