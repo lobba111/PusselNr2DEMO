@@ -26,12 +26,12 @@ string[] dataCommandon = filterdDataCommandos.ToArray();
 int[] dataValues = filterdDataFromInputValues.ToArray();
 
 
-//int horizontal = 0; // är det kommando forward ska denna variabel pussas på med värdet som forward håller
-//int depth = 0; // är kommandot down ska värdet utav down plussa på depth, är kommandot up så ska jag ta minus utav värdet up på mitt djup
+int horizontal = 0; // är det kommando forward ska denna variabel pussas på med värdet som forward håller
+int depth = 0; // är kommandot down ska värdet utav down plussa på depth, är kommandot up så ska jag ta minus utav värdet up på mitt djup
 // dags att börja testa lite med sample datan som finns tillgänglig innan jag ger mig på hela data mängden 
 
 
-/*for (int i = 0; i < dataCommandon.Length; i++)
+for (int i = 0; i < dataCommandon.Length; i++)
 {
     
 
@@ -55,50 +55,49 @@ int[] dataValues = filterdDataFromInputValues.ToArray();
 }
 
 int result = horizontal * depth;
-Console.WriteLine("min horizontela position är {0} min djup position är {1} : resultatet är = {2}",horizontal,depth,result);*/
+Console.WriteLine("Min horizontela position är {0} min djup position är {1} : resultatet är = {2}",horizontal,depth,result);
 
 
 
-int horizontal = 0;
-int depth = 0;
+int horizontal2 = 0;
+int depth2 = 0;
 int aim = 0;
-int buffer = 0;
 string[] sampleCommando = new string[] { "forward", "down", "forward", "up", "down", "forward" };
 int[] sampleValues = new int[] { 5, 5, 8, 3, 8, 2 };
-for (int i = 0; i < sampleCommando.Length; i++)
+for (int i = 0; i < dataCommandon.Length; i++)
 {
 
 
-    if (sampleCommando[i].Contains("forward") && i == 0)
+    if (dataCommandon[i].Contains("forward") && i == 0)
     {
-        horizontal += sampleValues[i];
+        horizontal2 += dataValues[i];
         
     }
-    else if (sampleCommando[i].Contains("forward"))
+    else if (dataCommandon[i].Contains("forward"))
     {
-        horizontal += sampleValues[i];
-        depth += sampleValues[i] * aim;
+        horizontal2 += dataValues[i];
+        depth2 += dataValues[i] * aim;
         
 
     }
-    else if (sampleCommando[i].Contains("down"))
+    else if (dataCommandon[i].Contains("down"))
     {
         
-        aim += sampleValues[i];
+        aim += dataValues[i];
 
     }
-    else if (sampleCommando[i].Contains("up"))
+    else if (dataCommandon[i].Contains("up"))
     {
         
-        aim -= sampleValues[i];
+        aim -= dataValues[i];
 
     }
 
 
 }
 
-int resultat2 = horizontal * depth;
-Console.WriteLine("horizontal {0} * depth {1} = {2}",horizontal,depth,resultat2);
+int resultat2 = horizontal2 * depth2;
+Console.WriteLine("Svaret är : horizontal {0} * depth {1} = {2}",horizontal2,depth2,resultat2);
 
 
 
