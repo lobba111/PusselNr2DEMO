@@ -1,5 +1,5 @@
 ﻿// See https://aka.ms/new-console-template for more information
-using PusselNr2;
+
 using System.Collections;
 using System.Text.RegularExpressions;
 
